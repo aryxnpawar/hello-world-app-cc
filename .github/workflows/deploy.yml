@@ -12,9 +12,10 @@ jobs:
     steps:
       - name: Deploy to EC2 via SSH
         run: |
-          echo "${{ secrets.EC2_SSH_KEY }}" > private_key
-          chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ec2-user@${{ secrets.EC2_HOST }} "
+          mkdir -p ~/.ssh
+          echo "${{ secrets.EC2_SSH_KEY }}" | tr -d '\r' > ~/.ssh/private_key
+          chmod 600 ~/.ssh/private_key
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/private_key ec2-user@${{ secrets.EC2_HOST }} "
             cd /home/ec2-user/hello-world-app-cc &&
             git pull origin main &&
             npm install &&
