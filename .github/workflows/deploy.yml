@@ -10,15 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy to EC2 via SSH
-        run: |
-          echo "${{ secrets.EC2_SSH_KEY }}" | cat -A | head -5
-          mkdir -p ~/.ssh
-          echo "${{ secrets.EC2_SSH_KEY }}" | tr -d '\r' > ~/.ssh/private_key
-          chmod 600 ~/.ssh/private_key
-          ssh -o StrictHostKeyChecking=no -i ~/.ssh/private_key ec2-user@${{ secrets.EC2_HOST }} "
-            cd /home/ec2-user/hello-world-app-cc &&
-            git pull origin main &&
-            npm install &&
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ec2-user
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd /home/ec2-user/hello-world-app-cc
+            git pull origin main
+            npm install
             pm2 restart hello-world
-          "
