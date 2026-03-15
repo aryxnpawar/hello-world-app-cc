@@ -10,10 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy to EC2
+      - name: Deploy to EC2 1
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.EC2_HOST }}
+          host: ${{ secrets.EC2_HOST_1 }}
+          username: ec2-user
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd /home/ec2-user/hello-world-app-cc
+            git pull origin main
+            npm install
+            pm2 restart hello-world
+
+      - name: Deploy to EC2 2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST_2 }}
           username: ec2-user
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
