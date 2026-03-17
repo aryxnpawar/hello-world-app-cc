@@ -97,7 +97,7 @@ app.get('/', (req, res) => {
 <body>
   <div class="card">
     <div class="badge">Cloud Computing Mini Project</div>
-    <h1>Hello World elastic ip check</h1>
+    <h1>Hello World Last check before dns</h1>
     <p><span class="dot"></span>Deployed on AWS EC2 with CI/CD</p>
     <div class="stack">
       <span class="tag">Node.js</span>
