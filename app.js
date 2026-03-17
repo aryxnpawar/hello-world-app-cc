@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello World</title>
+  <title>Hello CC</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
       align-items: center;
       justify-content: center;
       background:rgb(217, 96, 15);
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      background: linear-gradient(135deg,rgb(161, 180, 56),rgb(147, 78, 163),rgb(51, 3, 33));
       font-family: 'Segoe UI', sans-serif;
       color: white;
     }
