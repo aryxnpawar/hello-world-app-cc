@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
       align-items: center;
       justify-content: center;
       background:rgb(217, 96, 15);
-      background: linear-gradient(135deg,rgb(161, 180, 56),rgb(147, 78, 163),rgb(51, 3, 33));
+      background: linear-gradient(135deg,rgb(30, 31, 41),rgb(29, 30, 35),rgb(158, 140, 151));
       font-family: 'Segoe UI', sans-serif;
       color: white;
     }
