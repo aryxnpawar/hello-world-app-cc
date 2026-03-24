@@ -325,7 +325,7 @@ app.get('/', (req, res) => {
     </section>
 
     <footer>
-        <p>&copy; 2026 Nexora India Technologies Pvt Ltd. All rights reserved.</p>
+        <p>&copy; 2026 Tejas India Technologies Pvt Ltd. All rights reserved.</p>
         <div style="margin-top: 0.8rem;">
             <a href="#" style="color: var(--text-muted); margin: 0 10px; text-decoration: none;">Privacy</a>
             <a href="#" style="color: var(--text-muted); margin: 0 10px; text-decoration: none;">Terms</a>
