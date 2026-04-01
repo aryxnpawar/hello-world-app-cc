@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
         body {
             font-family: 'Inter', sans-serif;
             color: var(--text-main);
-            background-color:rgb(250, 111, 12);
+            background-color:rgb(254, 253, 252);
             line-height: 1.6;
         }
 
